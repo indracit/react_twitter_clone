@@ -1,8 +1,11 @@
 
 const RightSideBar = () => {
     return (
-    <div>
-    
+    <div className="rightsidebar">
+    <div className="tooltip">
+  Hover over me
+  <span className="tooltip-text">This is a tooltip</span>
+</div>
     </div>
 )
 }
