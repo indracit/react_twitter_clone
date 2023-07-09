@@ -1,4 +1,5 @@
 $textcolor : rgb(32, 32, 32);
+$hovercolor :  rgb(222, 220, 220);
 
 @mixin center{
     display: flex;
@@ -14,19 +15,18 @@ $textcolor : rgb(32, 32, 32);
 // background-color: aquamarine;
 // width: fit-content;
 
-
-
 ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     list-style-type: none;
-    height: 60vh;
-    width: 10vw;
+    height: 400px;
+    width: 250px;
 
     .list-item{
         width: fit-content;
         padding: .5rem;
+        
         a:-webkit-any-link {
 
             color: $textcolor;
@@ -41,7 +41,7 @@ ul {
     }
     
     .list-item:hover {
-        background-color: rgb(222, 220, 220);
+        background-color: $hovercolor;
         border-radius: 2rem;
     }
 }
@@ -52,10 +52,13 @@ ul {
     width: fit-content;
 // background-color: aqua;
 padding: .5rem;
+
 }
 
 .tweet{
-    width: 12vw;
+    
+    cursor: pointer;
+    width: 200px;
     padding: .5rem 0 .5rem;
     color: aliceblue;
     background-color:#1d9bf0;
@@ -66,7 +69,7 @@ padding: .5rem;
 }
 
 .logo-container:hover {
-    background-color: rgb(222, 220, 220);
+    background-color:$hovercolor;
     border-radius: 50%;
 }
 .tweet:hover{
@@ -74,18 +77,20 @@ padding: .5rem;
 }
 
 .user {
+    
+    cursor: pointer;
     .userimg{
         @include center;
         width: 36px;
         height:36px;
         color: aliceblue;
-        border-radius: 50%;
+        border-radius: 18px;
         background-color: #1d9bf0;
         
     }
 display: flex;
 justify-content: space-between;
-width: 13vw;
+width: 200px;
 padding: .4rem;
 
 .username{
@@ -104,33 +109,89 @@ padding: .4rem;
 }
 
 .user:hover{
-    background-color: rgb(222, 220, 220);
+    background-color: $hovercolor;
     border-radius: 1.5rem;
 }
 
 .topbar{ 
-    position:sticky;
-    width: 35vw;
-    height: 15vh;
+    width: 450px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     // background-color: #0b68a7;
     @include border;
-    padding: .5rem;
-
+    // 
+    p {
+        padding: .5rem;
+    }
     .top-content{
         display: flex;
         justify-content:space-evenly;
+        
+        p {  display: flex;
+            justify-content: center;
+            padding: .5rem;
+            width: 225px;
+        }
+        p:hover{
+            background-color:$hovercolor;
+        }
+
     }
+
+    
 }
 
 .rightsidebar{
     // background-color: antiquewhite;
-    width: 20vw;
-    height: 80vh;
+    width: 320px;
+    height: fit-content;
+    @include center;
+    position: relative;
+    flex-direction: column;
+    
     // @include border;
+
+    .search { 
+        display: flex;
+        position: absolute;
+        right: -13px;
+        padding: 1rem;
+        border-radius: 50px;
+
+        .search-icon{
+            position: absolute;
+            left: 45px;
+            top:26px;
+        }
+        input[type='text']{
+            height: 35px;
+            width:  300px;
+            margin-left: 1rem;
+            border-style: none;
+            border-radius: 50px;
+            background-color: #eff3f4;
+            text-indent: 40px;
+
+        }
+    }
+    .p-verify{
+        position: absolute;
+        top:70px;
+    }
+    .sticky-search{
+        background-color:#fff;
+        width: 316px;
+        height: 55px;
+        position: fixed;
+        top:0px;
+        z-index: 1;
+        
+    }
+    
 }
+
 
 .tooltip {
     position: relative;
@@ -147,8 +208,7 @@ padding: .4rem;
     padding: 5px;
     position: absolute;
     z-index: 1;
-    // bottom: 125%;
-    // left: 50%;
+    left: 100%;
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
@@ -159,3 +219,93 @@ padding: .4rem;
     opacity: 1;
 }
     
+
+.get-verified{
+    font-size: .9rem;
+    background-color:  #eff3f4;
+    height: fit-content;
+    width:  300px;
+    margin-left: 1rem;
+    padding: .5rem;
+    border-radius: 15px;
+    p{
+        margin-top: .5rem;
+    }
+    .verfied-button{
+        color: whitesmoke;
+        @include center;
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        background-color: #000;
+        font-weight: bolder;
+    }
+
+    .verfied-button:hover{
+        background-color: #232323;
+        cursor: pointer;
+    }
+}
+
+.whatshappening {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #eff3f4;
+    height: fit-content;
+    width:  300px;
+    margin-left: 1rem;
+    border-radius: 15px;
+    margin-top: .5rem;
+    
+    .title {
+        font-weight: bolder;
+        margin: .5rem 0 .5rem;
+        padding: .5rem .5rem 0 ;
+    }
+
+    .more {
+        font-size: small;
+        color: #1d9bf0;
+        margin: .5rem 0 0;
+        cursor: pointer;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: .5rem;
+        
+    }
+
+    .more:hover{
+        background-color:#e1e3e3;
+    }
+}
+
+.trends{
+    display: flex;
+    justify-content:space-between;
+    padding: .5rem 1rem .5rem .5rem;
+
+    .topic, .tweets{
+        font-size:10px;
+        
+    }
+    .hashtag{
+        font-weight:bolder;
+    }
+
+    .trend-dot{
+        padding: 7.5px;
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+    }
+    .trend-dot:hover{
+        background-color: #c2def0;
+        color:#1d9bf0;
+    }
+}
+
+.trends:hover{
+    cursor: pointer;
+    background-color:#e1e3e3 ;
+}

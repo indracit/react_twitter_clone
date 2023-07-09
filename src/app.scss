@@ -14,14 +14,26 @@
     // align-items: center;
 }
 
-.app{
+.app {
     @include center; 
-
+    width: 1250px;
 }
 
-.sidebar{
+
+
+.sidebar {
     display: flex;
+    position: fixed;
     height: 95vh;
     flex-direction: column;
     justify-content: space-between;
+    left: 150px;
+}
+.t-bar{
+    position: fixed;
+    left:370px;
+}
+.r-bar{
+    position: relative;
+    left:360px;
 }

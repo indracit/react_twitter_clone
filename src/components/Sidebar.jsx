@@ -11,12 +11,12 @@ import {CgMoreO} from "react-icons/cg";
 import {RiFileList2Line} from "react-icons/ri";
 import {PiBookmarkSimple} from "react-icons/pi";
 import {Link} from "react-router-dom";
-
+// import { useEffect } from 'react';
 const iconStyle = {color:'black',fontSize: '1rem'};
 
 
 const Sidebar = () => {
-
+    
     return (
         <div className='sidebar-container'>
         <ul >

@@ -11,7 +11,6 @@ function App() {
   return (
     <>
     <div className='app'>
-
       <div className='sidebar'>
         <div>
       <Logo/>
@@ -21,10 +20,11 @@ function App() {
       <Userdetails/>
       </div>
 
-      <div>
+      <div className='t-bar'>
         <Topbar/>
       </div>
-      <div>
+      
+      <div className='r-bar'>
         <RightSideBar/>
       </div>
     </div>
