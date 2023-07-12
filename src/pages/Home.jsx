@@ -1,9 +1,11 @@
-
-
+import Addpost from "../components/Addpost"
+import Viewpost from "../components/Viewpost"
 const Home = () => {
     return (
     <div className="home">
-        Home
+        <Addpost/>
+        <Viewpost/>
+
     </div>
     )
 }

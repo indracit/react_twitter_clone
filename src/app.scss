@@ -11,29 +11,31 @@
 @mixin center{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     // align-items: center;
 }
 
 .app {
     @include center; 
-    width: 1250px;
+    
 }
 
 
 
 .sidebar {
     display: flex;
-    position: fixed;
+    // position: fixed;
     height: 95vh;
     flex-direction: column;
     justify-content: space-between;
-    left: 150px;
+    // left: 120px;
 }
-.t-bar{
-    position: fixed;
-    left:370px;
-}
-.r-bar{
-    position: relative;
-    left:360px;
-}
+// .t-bar{
+//     // position: fixed;
+//     // left:333px;
+//     // z-index: 1;
+// }
+// .r-bar{
+//     // position: relative;
+//     // left:340px;
+// }
