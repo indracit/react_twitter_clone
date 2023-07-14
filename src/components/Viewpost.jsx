@@ -1,197 +1,220 @@
+import { useState } from 'react';
 import '../styles/sidebar.scss';
+import {BsThreeDots} from 'react-icons/bs';
 
-const userDetails = {
-id: 1,
+const userDetails = [{
+userId: 1,
 name:'Indrajith',
 username:'indraji746463',
 isVerified : true,
-}
+}]
 
 const post = [
   {
-    id:1,
+    postId:1,
     body : 'In every day, there are 1,440 minutes. That means we have 1,440 daily opportunities to make a positive impact.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'2h'
   },
   {
-    id:2,
+    postId:2,
     body : 'You are never too old to set another goal or to dream a new dream.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'4h'
   },
   {
-    id:3,
-    body : 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.',
+    postId:3,
+    body : 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confpostIdence.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'5h'
   },
   {
-    id:4,
+    postId:4,
     body : 'It always seems impossible until its done.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'6h'
   },
   {
-    id:5,
+    postId:5,
     body : 'It does not matter how slowly you go as long as you do not stop.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'7h'
   },
   {
-    id:6,
+    postId:6,
     body : 'If youre going through hell, keep going.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'8h'
   },
   {
-    id:7,
+    postId:7,
     body : 'It does not matter how slowly you go as long as you do not stop.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'9h'
   },
   {
-    id:8,
+    postId:8,
     body : 'If youre going through hell, keep going.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'10h'
   },
   {
-    id:9,
-    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.',
+    postId:9,
+    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confpostIdence in your own powers you cannot be successful or happy.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'11h'
   },
   {
-    id:10,
+    postId:10,
     body : 'Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'12h'
   },
   {
-    id:11,
-    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.',
+    postId:11,
+    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confpostIdence in your own powers you cannot be successful or happy.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'13h'
   },
   {
-    id:12,
+    postId:12,
     body : 'Start where you are. Use what you have. Do what you can.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'14h'
   },
   {
-    id:13,
+    postId:13,
     body : 'Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'15h'
   },
   {
-    id:14,
-    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.',
+    postId:14,
+    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confpostIdence in your own powers you cannot be successful or happy.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'16h'
   },
   {
-    id:15,
+    postId:15,
     body : 'Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'17h'
   },
   {
-    id:16,
-    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.',
+    postId:16,
+    body : 'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confpostIdence in your own powers you cannot be successful or happy.',
     otherDetails : {
       comments: 200,
       retweets : 100,
       likes : 400,
       views : 288,
-    },
+    }, userId : 1,
     postedtime:'18h'
   },
 ]
 
 
 const Viewpost = () => {
+
+  const [user] = useState(userDetails);
+  const [posts] = useState(post);
+
   return (
     <div>
-      <div className="userimg">I</div>
+      { posts.map((data)=>  <div  key={data.postId}>
+        <div className="userimg">I</div>
+        <div>
+          <div className='post-header'>
+            <p>{userDetails.find(obj=>obj.userId===data.userId).name}</p>
+            <p>{'@'+userDetails.find(obj=>obj.userId===data.userId).username}</p>
+            <p>{data.postedtime}</p>
+            <BsThreeDots/>
+          </div>
+          <div className='post-body'>
+            <p>{data.body}</p>
+          </div>
+          <div className='post-footer'></div>
+        </div>
+      </div>
+      )}
+      
     </div>
+
   )  
 }
 
