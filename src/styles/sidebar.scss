@@ -404,3 +404,14 @@ padding: .4rem;
     }
    
 }
+
+.userimg{
+    margin-left: 1rem;
+    @include center;
+    width: 30px;
+    height:30px;
+    color: aliceblue;
+    border-radius: 50%;
+    background-color: #1d9bf0;
+    
+}
