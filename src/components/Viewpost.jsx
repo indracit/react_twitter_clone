@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import '../styles/sidebar.scss';
 import {BsThreeDots} from 'react-icons/bs';
+import {FaRegComment} from 'react-icons/fa';
+import {FaRetweet} from 'react-icons/fa' ;
+import {AiOutlineHeart} from 'react-icons/ai';
+import {BiBarChart} from 'react-icons/bi';
+import {LuShare} from 'react-icons/lu'
+
 
 const userDetails = [{
 userId: 1,
@@ -196,19 +202,41 @@ const Viewpost = () => {
 
   return (
     <div>
-      { posts.map((data)=>  <div  key={data.postId}>
+      { posts.map((data)=>  <div className='posts' key={data.postId}>
         <div className="userimg">I</div>
         <div>
           <div className='post-header'>
+            <div className='post-header-items'>
             <p>{userDetails.find(obj=>obj.userId===data.userId).name}</p>
-            <p>{'@'+userDetails.find(obj=>obj.userId===data.userId).username}</p>
+            <p>{'@'+user.find(obj=>obj.userId===data.userId).username}</p>
             <p>{data.postedtime}</p>
+            </div>
+            <div>
             <BsThreeDots/>
+            </div>
           </div>
           <div className='post-body'>
             <p>{data.body}</p>
           </div>
-          <div className='post-footer'></div>
+          <div className='post-footer'>
+            <div>
+            <FaRegComment/> 
+            <p>{`${data.otherDetails.comments}k`}</p>
+            </div>
+            <div>
+            <FaRetweet style={{'fontSize':'1.2rem'}}/> 
+            <p>{`${data.otherDetails.retweets}k`}</p>
+            </div>
+            <div>
+            <AiOutlineHeart/> 
+            <p>{`${data.otherDetails.likes}k`}</p>
+            </div>
+            <div>
+            <BiBarChart/> 
+            <p>{`${data.otherDetails.views}k`}</p>
+            </div>
+            <div><LuShare/></div>
+          </div>
         </div>
       </div>
       )}
