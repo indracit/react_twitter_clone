@@ -207,7 +207,9 @@ const Viewpost = () => {
         <div>
           <div className='post-header'>
             <div className='post-header-items'>
-            <p>{userDetails.find(obj=>obj.userId===data.userId).name}</p>
+            <div className='user-tip'><p>{userDetails.find(obj=>obj.userId===data.userId).name}</p>
+            <p className='user-tip-text'>userDetails</p>
+            </div>
             <p>{'@'+user.find(obj=>obj.userId===data.userId).username}</p>
             <p>{data.postedtime}</p>
             </div>

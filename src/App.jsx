@@ -6,8 +6,13 @@ import Userdetails from './components/Userdetails'
 import Topbar from './components/Topbar';
 import RightSideBar from './components/RightSideBar'
 import Home from './pages/Home'
+import Modal from './components/Modal'
+import { AppContext } from './context/Modalcontext';
+import { useContext } from 'react'
+
 function App() {
 
+  const {openModal} = useContext(AppContext);
   return (
     <>
     <div className='app'>
@@ -25,8 +30,10 @@ function App() {
         <Topbar/>
       <div><Home/></div>
       </div>
-
-
+      
+        {openModal && <Modal/> }
+        
+        
       <div className='r-bar'>
         <RightSideBar/>
       </div>
