@@ -34,9 +34,10 @@ function App() {
         {openModal && <Modal/> }
         
         
-      <div className='r-bar'>
-        <RightSideBar/>
-      </div>
+      
+        {openModal ? <div className='r-bar'> <RightSideBar/> </div> : <RightSideBar/> }
+        
+      
 
     </div>
     </>
